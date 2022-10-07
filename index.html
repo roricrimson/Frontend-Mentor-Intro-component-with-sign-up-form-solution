@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+
+    body {
+      background: url('./images/bg-intro-desktop.png') no-repeat;
+      background-size: 100vw;
+      background-color: hsl(0, 100%, 74%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+    }
+
+    .text-content {
+      flex: 1;
+      margin-right: 7rem;
+      margin-left: 15rem;
+    }
+
+    .text-content h1 {
+      color: hsl(0, 0%, 100%);
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 5.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .text-content p {
+      color: hsl(0, 4%, 91%);
+    }
+
+    .form-section {
+      flex: 1;
+      margin-right: 15rem;
+    }
+
+    .btn {
+      background-color: hsl(248, 32%, 49%);
+      color: hsl(0, 0%, 100%);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: none;
+      box-shadow: 0 0.7rem 0 rgba(0, 0, 0, 0.122);
+      width: 100%;
+    }
+
+    .btn span {
+      font-weight: 700;
+    }
+
+    form {
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 1rem;
+      box-shadow: 0 0.7rem 0 rgba(0, 0, 0, 0.122);
+    }
+
+    .form-content {
+      display: flex;
+      flex-direction: column;
+      padding: 4rem;
+      padding-top: 2rem;
+    }
+
+    .input-section {
+      position: relative;
+    }
+
+    .input-section input {
+      width: 100%;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border: 0.1rem solid hsl(246, 25%, 77%);
+      border-radius: 0.5rem;
+      font-weight: 600;
+
+    }
+
+    .input-section input~img,
+    .input-section input~p {
+      display: none;
+    }
+
+    .input-section input:focus:invalid~img,
+    .input-section input:focus:invalid~img~p {
+      display: block;
+    }
+
+    input::placeholder {
+      color: hsl(249, 10%, 26%);
+      font-weight: 700;
+    }
+
+    img {
+      position: absolute;
+      top: 3.2rem;
+      left: 37.5rem;
+    }
+
+    .error-message {
+      color: hsl(0, 100%, 74%);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      text-align: right;
+    }
+
+    form button {
+      background-color: hsl(154, 59%, 51%);
+      width: 100%;
+      color: hsl(0, 0%, 100%);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      border-bottom: 0.3rem solid hsl(154, 57%, 44%);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .terms {
+      text-align: center;
+      color: hsl(246, 25%, 77%);
+      font-size: 1rem;
+    }
+
+    form a {
+      text-decoration: none;
+      color: hsl(0, 100%, 74%);
+      font-weight: 700;
+    }
+
+    @media (max-width:719px) {
+      body {
+        background: url('./images/bg-intro-mobile.png');
+        background-color: hsl(0, 100%, 74%);
+        flex-direction: column;
+      }
+
+      .text-content {
+        margin: 8rem 3rem;
+        margin-bottom: 6rem;
+        text-align: center;
+      }
+
+      .text-content h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .form-section {
+        margin: 2rem;
+      }
+
+      .btn {
+        padding: 1.5rem;
+        border-radius: 1rem;
+      }
+
+      form {
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 1rem;
+        box-shadow: 0 0.7rem 0 rgba(0, 0, 0, 0.122);
+      }
+
+      img {
+        top: 3.2rem;
+        left: 21.5rem;
+      }
+
+    }
+
+    .attribution {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="text-content">
+    <h1>Learn to code by watching others</h1>
+    <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+      but understanding how developers think is invaluable.</p>
+  </div>
+
+  <div class="form-section">
+    <button class="btn"><span>Try it free 7 days</span> then $20/mo. thereafter</button>
+    <form action="">
+      <div class="form-content">
+        <div class="input-section">
+          <input type="text" placeholder="First Name" required>
+          <img src="./images/icon-error.svg" alt="">
+          <p class="error-message">First Name cannot be emty</p>
+        </div>
+        <div class="input-section">
+          <input type="text" placeholder="Last Name" required>
+          <img src="./images/icon-error.svg" alt="">
+          <p class="error-message">Last Name cannot be emty</p>
+          <div class="input-section">
+            <input id="email" type="email" placeholder="Email Address">
+            <img src="./images/icon-error.svg" alt="">
+            <p class="error-message">Looks like this is not a email</p>
+          </div>
+          <div class="input-section">
+            <input type="text" placeholder="Password" required>
+            <img src="./images/icon-error.svg" alt="">
+            <p class="error-message">Password cannot be emty</p>
+          </div>
+          <button id="submit" type="submit">Claim your free trial</button>
+          <h6 class="terms">By clicking the button, you are agreeing to our <a href="">Terms and Services</a></h6>
+        </div>
+    </form>
+  </div>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/roricrimson">RoriCrimson</a>.
+    </p>
+  </footer>
+
+  <script>
+  </script>
+</body>
+
+</html>
